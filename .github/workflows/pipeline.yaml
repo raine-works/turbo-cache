@@ -55,7 +55,6 @@ jobs:
           env: |
             GITHUB_TOKEN
           runCmd: |
-            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
             echo $GITHUB_TOKEN | gh auth login --with-token
             bun install --frozen-lockfile --ignore-scripts
             bun run release --cache-dir=.turbo

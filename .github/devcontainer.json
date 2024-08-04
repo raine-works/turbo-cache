@@ -6,7 +6,8 @@
 		"ghcr.io/raine-works/devcontainer-features/bun:1": { "version": "1.1.21" },
 		"ghcr.io/devcontainers/features/node:1": { "version": "20.15.1" },
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 	"mounts": [
 		"source=${env:HOME}${env:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind",
