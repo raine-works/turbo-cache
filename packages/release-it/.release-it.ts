@@ -18,7 +18,7 @@ export default {
 	git: {
 		push: true,
 		tagName: `${packageName}-v${version}`,
-		pushRepo: 'git@github.com:raine-works/turbo-cache.git',
+		pushRepo: 'https://github.com/raine-works/turbo-cache.git',
 		commitsPath: '.',
 		commitMessage: `feat(${scope}): released version v${version} [no ci]`,
 		requireCommits: true,
