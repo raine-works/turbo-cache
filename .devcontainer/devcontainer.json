@@ -1,0 +1,24 @@
+{
+	"name": "Turbo Cache",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/turborepo-npm:1": { "version": "2.0.11" },
+		"ghcr.io/raine-works/devcontainer-features/bun:1": { "version": "1.1.21" },
+		"ghcr.io/devcontainers/features/node:1": { "version": "20.15.1" },
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"mounts": [
+		"source=${env:HOME}${env:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind"
+	],
+	"containerEnv": {
+		"NODE_ENV": "development",
+		"TZ": "UTC"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": ["mhutchie.git-graph", "esbenp.prettier-vscode"]
+		}
+	}
+}

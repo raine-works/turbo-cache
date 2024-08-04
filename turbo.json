@@ -1,0 +1,16 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"globalEnv": ["HOME", "NODE_ENV"],
+	"tasks": {
+		"deploy": {
+			"cache": true
+		},
+		"dev": {
+			"persistent": true,
+			"cache": false
+		},
+		"docker:build": {
+			"cache": true
+		}
+	}
+}
