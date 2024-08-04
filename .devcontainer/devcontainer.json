@@ -9,9 +9,7 @@
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
-	"mounts": [
-		"source=${env:HOME}${env:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind"
-	],
+	"mounts": ["source=${env:HOME}${env:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind"],
 	"containerEnv": {
 		"NODE_ENV": "development",
 		"TZ": "UTC"
