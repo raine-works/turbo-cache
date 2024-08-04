@@ -40,7 +40,7 @@ jobs:
       - name: Devcontainer
         uses: devcontainers/ci@v0.3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PIPELINE }}
         with:
           imageName: ghcr.io/raine-works/turbo-cache-devcontainer
           cacheFrom: ghcr.io/raine-works/turbo-cache-devcontainer
