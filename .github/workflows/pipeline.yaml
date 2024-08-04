@@ -48,5 +48,6 @@ jobs:
           env: |
             GITHUB_TOKEN
           runCmd: |
+            echo $GITHUB_TOKEN
             bun install --frozen-lockfile --ignore-scripts
             bun run release --cache-dir=.turbo
