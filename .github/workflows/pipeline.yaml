@@ -40,7 +40,7 @@ jobs:
       - name: Devcontainer
         uses: devcontainers/ci@v0.3
         env:
-          GITHUB_TOKEN: ${{ secrets.PIPELINE }}
+          GITHUB_TOKEN: ${{ secrets.PIPELINE_TOKEN }}
         with:
           imageName: ghcr.io/raine-works/turbo-cache-devcontainer
           cacheFrom: ghcr.io/raine-works/turbo-cache-devcontainer
@@ -50,3 +50,6 @@ jobs:
           runCmd: |
             bun install --frozen-lockfile --ignore-scripts
             bun run release --cache-dir=.turbo
+            bun run docker:auth
+            bun run docker:build
+          
