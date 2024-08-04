@@ -37,6 +37,13 @@ jobs:
           git config --global user.name "$GIT_USER_NAME"
           git config --global user.email "$GIT_USER_EMAIL"
 
+      - name: Authenticate to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.PIPELINE_TOKEN }}
+
       - name: Devcontainer
         uses: devcontainers/ci@v0.3
         env:
@@ -50,6 +57,5 @@ jobs:
           runCmd: |
             bun install --frozen-lockfile --ignore-scripts
             bun run release --cache-dir=.turbo
-            bun run docker:auth
             bun run docker:build
           
