@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-bun run format
-git add -A .
+# bun run format
+# git add -A .
