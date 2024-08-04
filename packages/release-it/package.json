@@ -1,0 +1,23 @@
+{
+	"name": "@turbo-cache/release-it",
+	"version": "0.0.0",
+	"private": true,
+	"main": ".release-it.ts",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:raine-works/turbo-cache.git",
+		"directory": "packages/release-it"
+	},
+	"scripts": {
+		"release": "release-it --ci"
+	},
+	"peerDependencies": {
+		"typescript": "5.2.2"
+	},
+	"devDependencies": {
+		"@turbo-cache/tsconfig": "workspace:*",
+		"@b12k/mvm": "0.0.10",
+		"@release-it/conventional-changelog": "8.0.1",
+		"release-it": "17.6.0"
+	}
+}

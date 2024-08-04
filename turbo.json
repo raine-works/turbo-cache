@@ -11,6 +11,10 @@
 		},
 		"docker:build": {
 			"cache": true
+		},
+		"release": {
+			"dependsOn": ["^release"],
+			"outputLogs": "new-only"
 		}
 	}
 }

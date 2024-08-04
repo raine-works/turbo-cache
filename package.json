@@ -1,6 +1,7 @@
 {
 	"name": "turbo-cache",
 	"private": true,
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:raine-works/turbo-cache.git"
@@ -15,17 +16,20 @@
 		"docker:auth": "echo $(gh auth token) | docker login ghcr.io -u $(gh api user | jq -r '.login') --password-stdin",
 		"docker:build": "turbo docker:build",
 		"format": "prettier --write .",
-		"prepare": "husky"
+		"prepare": "husky",
+		"release": "turbo release --concurrency=1"
+	},
+	"peerDependencies": {
+		"typescript": "5.2.2"
 	},
 	"devDependencies": {
 		"@turbo-cache/tsconfig": "workspace:*",
+		"@commitlint/cli": "19.3.0",
+		"@commitlint/config-conventional": "19.2.2",
 		"bun-types": "1.1.21",
 		"husky": "9.0.11",
 		"prettier": "3.3.2",
 		"turbo": "2.0.11"
-	},
-	"peerDependencies": {
-		"typescript": "5.2.2"
 	},
 	"packageManager": "bun@1.1.21"
 }

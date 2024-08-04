@@ -1,4 +1,4 @@
 {
 	"extends": "@turbo-cache/tsconfig/base.json",
-	"exclude": ["node_modules"]
+	"include": [".release-it.ts"]
 }
