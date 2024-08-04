@@ -1,0 +1,52 @@
+name: CI/CD
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.15.1'
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup turbo cache
+        uses: actions/cache@v3
+        with:
+          path: '.turbo'
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
+            turbo-master-
+
+      - name: Setup git
+        env:
+          GIT_USER_NAME: ${{ github.actor }}
+          GIT_USER_EMAIL: 'actions@github.com'
+        run: |
+          git config global user.name "$GIT_USER_NAME"
+          git config global user.email "$GIT_USER_EMAIL"
+
+      - name: Devcontainer
+        uses: devcontainers/ci@v0.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          imageName: ghcr.io/raine-works/turbo-cache-devcontainer
+          cacheFrom: ghcr.io/raine-works/turbo-cache-devcontainer
+          configFile: ./.github/devcontainer.json
+          env: |
+            GITHUB_TOKEN
+          runCmd: |
+            bun install --frozen-lockfile --ignore-scripts
+            bun run release --cache-dir=.turbo
