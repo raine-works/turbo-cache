@@ -55,8 +55,6 @@ jobs:
           env: |
             GITHUB_TOKEN
           runCmd: |
-            mkdir -p /home/vscode/.ssh
-            ssh-keyscan -t rsa github.com >> /home/vscode/.ssh/known_hosts
             bun install --frozen-lockfile --ignore-scripts
             bun run release --cache-dir=.turbo
             bun run docker:build

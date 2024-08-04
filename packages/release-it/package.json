@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"main": ".release-it.ts",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:raine-works/turbo-cache.git",
