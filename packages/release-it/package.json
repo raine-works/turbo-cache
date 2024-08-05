@@ -1,7 +1,7 @@
 {
 	"name": "@turbo-cache/release-it",
 	"private": true,
-	"main": ".release-it.ts",
+	"main": "src/index.ts",
 	"type": "module",
 	"repository": {
 		"type": "git",

@@ -6,5 +6,5 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"exclude": ["node_modules"]
+	"include": ["src/*", ".release-it.ts"]
 }
