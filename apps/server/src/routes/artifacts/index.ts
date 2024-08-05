@@ -1,10 +1,11 @@
 import { Hono } from 'hono';
 import { stream } from 'hono/streaming';
 import { initLocalStorage } from '@/utils/storage';
+import { env } from '@/utils/env';
 import events from '@/routes/artifacts/events';
 import status from '@/routes/artifacts/status';
 
-const localStorage = await initLocalStorage('/tmp/test');
+const localStorage = initLocalStorage(env.LOCAL_STORAGE_DIR ?? '/tmp/turbo');
 
 const app = new Hono()
 	.route('/events', events)
