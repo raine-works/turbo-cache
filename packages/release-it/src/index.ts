@@ -1,5 +1,3 @@
-import type { Config } from 'release-it';
-
 const version = '${version}';
 const packageName = process.env.npm_package_name as string;
 const scope = packageName.split('/')[1];
@@ -35,4 +33,4 @@ export default {
 	hooks: {
 		'before:git:release': ['mvm-update', 'git add --all']
 	}
-} as Config;
+};
