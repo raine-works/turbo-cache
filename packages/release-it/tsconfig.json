@@ -1,7 +1,4 @@
 {
 	"extends": "@turbo-cache/tsconfig/base.json",
-	"compilerOptions": {
-		"module": "CommonJS"
-	},
 	"include": ["src/*"]
 }

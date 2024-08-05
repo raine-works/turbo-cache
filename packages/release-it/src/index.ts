@@ -1,5 +1,5 @@
 const version = '${version}';
-const packageName = process.env.npm_package_name!;
+const packageName = process.env.npm_package_name as string;
 const scope = packageName.split('/')[1];
 
 export default {
