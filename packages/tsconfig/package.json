@@ -3,7 +3,7 @@
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:raine-works/turbo-cache.git",
+		"url": "https://github.com/raine-works/turbo-cache",
 		"directory": "packages/tsconfig"
 	},
 	"files": [
