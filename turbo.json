@@ -3,16 +3,12 @@
 	"globalPassThroughEnv": ["GITHUB_TOKEN"],
 	"globalEnv": ["HOME", "NODE_ENV"],
 	"tasks": {
-		"deploy": {
-			"cache": true
-		},
+		"deploy": {},
 		"dev": {
 			"persistent": true,
 			"cache": false
 		},
-		"docker:build": {
-			"cache": true
-		},
+		"docker:build": {},
 		"release": {
 			"dependsOn": ["^release"],
 			"outputLogs": "new-only"
