@@ -1,7 +1,7 @@
 {
 	"name": "@turbo-cache/release-it",
 	"private": true,
-	"main": "src/index.ts",
+	"main": "src/index.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/raine-works/turbo-cache",
@@ -11,7 +11,6 @@
 		"typescript": "5.2.2"
 	},
 	"devDependencies": {
-		"@turbo-cache/tsconfig": "workspace:*",
 		"@b12k/mvm": "0.0.10",
 		"@release-it/conventional-changelog": "8.0.1",
 		"release-it": "17.6.0"

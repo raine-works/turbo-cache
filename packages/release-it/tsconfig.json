@@ -1,4 +1,0 @@
-{
-	"extends": "@turbo-cache/tsconfig/base.json",
-	"include": ["src/*"]
-}
