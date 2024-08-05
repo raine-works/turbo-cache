@@ -40,13 +40,22 @@ const app = new Hono()
 		const hash = c.req.param('hash');
 		const team = c.req.query('teamId') ?? c.req.query('slug');
 		const buffer = await c.req.arrayBuffer();
-		const stream = new ReadableStream({
+		const readableStream = new ReadableStream({
 			start(controller) {
 				controller.enqueue(buffer);
 				controller.close();
 			}
 		});
-		await localStorage.writeFile(`${team}/${hash}`, stream);
+		readableStream.pipeTo(
+			new WritableStream({
+				async write(chunk) {
+					await localStorage.writeFile(`${team}/${hash}`, chunk);
+				},
+				abort(err) {
+					console.error('Error uploading file:', err);
+				}
+			})
+		);
 		return c.json({ urls: [`${team}/${hash}`] });
 	});
 

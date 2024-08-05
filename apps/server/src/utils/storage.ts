@@ -8,7 +8,7 @@ export const initLocalStorage = (dirPath: string) => {
 	}
 	return {
 		writeFile: async (path: string, data: ReadableStream) => {
-			await Bun.write(`${basePath}/${path}`, new Response(data));
+			return await Bun.write(`${basePath}/${path}`, new Response(data));
 		},
 		streamFile: (path: string) => {
 			return Bun.file(`${basePath}/${path}`).stream();

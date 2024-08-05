@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { logger } from '@/middleware/logger';
 import { auth } from '@/middleware/auth';
 import { env } from '@/utils/env';
 import { zValidator } from '@hono/zod-validator';
@@ -7,6 +8,7 @@ import artifacts from '@/routes/artifacts/index';
 
 const app = new Hono()
 	.basePath('/v8')
+	.use(logger)
 	.use(
 		'/*',
 		zValidator(
