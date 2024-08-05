@@ -1,1 +1,1 @@
-export default require('@turbo-cache/release-it');
+module.exports = require('@turbo-cache/release-it');
