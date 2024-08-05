@@ -6,5 +6,6 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src/*", ".release-it.ts"]
+	"include": ["src/*", ".release-it.ts"],
+	"references": [{ "path": "../../packages/release-it/tsconfig.json" }]
 }
