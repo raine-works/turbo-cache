@@ -1,4 +1,7 @@
 {
 	"extends": "@turbo-cache/tsconfig/base.json",
+	"compilerOptions": {
+		"moduleResolution": "Node"
+	},
 	"include": ["src/*"]
 }
