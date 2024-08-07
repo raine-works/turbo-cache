@@ -16,7 +16,8 @@
 		"docker:auth": "rm -rf ~/.docker && echo $(gh auth token) | docker login ghcr.io -u $(gh api user | jq -r '.login') --password-stdin",
 		"docker:build": "turbo docker:build",
 		"format": "prettier --write .",
-		"prepare": "husky"
+		"prepare": "husky",
+		"release": "turbo release --concurrency=1"
 	},
 	"peerDependencies": {
 		"typescript": "5.2.2"
