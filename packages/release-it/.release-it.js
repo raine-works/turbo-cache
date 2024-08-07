@@ -16,7 +16,7 @@ module.exports = {
 	git: {
 		push: true,
 		tagName: `${packageName}-v${version}`,
-		pushRepo: 'git@github.com:b12k/monorepo-semantic-releases.git',
+		pushRepo: 'https://github.com/raine-works/turbo-cache.git',
 		commitsPath: '.',
 		commitMessage: `feat(${scope}): released version v${version} [no ci]`,
 		requireCommits: true,
