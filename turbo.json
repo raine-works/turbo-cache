@@ -8,10 +8,6 @@
 			"persistent": true,
 			"cache": false
 		},
-		"docker:build": {},
-		"release": {
-			"dependsOn": ["^release"],
-			"outputLogs": "new-only"
-		}
+		"docker:build": {}
 	}
 }

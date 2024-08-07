@@ -13,11 +13,10 @@
 	"scripts": {
 		"deploy": "turbo deploy",
 		"dev": "turbo dev",
-		"docker:auth": "echo $(gh auth token) | docker login ghcr.io -u $(gh api user | jq -r '.login') --password-stdin",
+		"docker:auth": "rm -rf ~/.docker && echo $(gh auth token) | docker login ghcr.io -u $(gh api user | jq -r '.login') --password-stdin",
 		"docker:build": "turbo docker:build",
 		"format": "prettier --write .",
-		"prepare": "husky",
-		"release": "turbo release --concurrency=1"
+		"prepare": "husky"
 	},
 	"peerDependencies": {
 		"typescript": "5.2.2"

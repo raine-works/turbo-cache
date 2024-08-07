@@ -5,7 +5,7 @@
 		"lib": ["ESNext"],
 		"module": "esnext",
 		"target": "esnext",
-		"moduleResolution": "Node",
+		"moduleResolution": "Bundler",
 		"moduleDetection": "force",
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
